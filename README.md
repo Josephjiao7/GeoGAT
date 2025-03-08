@@ -7,19 +7,18 @@ Some recent geospatial artificial intelligence (GeoAI) models have contributed t
 ### Spatial similarity in GeoGATs
 According to [Zhu et al. (2018)](https://doi.org/10.1080/19475683.2018.1534890), spatial similarity refers to “the more similar the geographical configurations of two spatial units, the more similar the values of the target variable at these two spatial units”, and we use *S<sub>l</sub>* to express. 
 
-It can consider not only the geographic configuration similarity between two spatial units but also the similarity in the composition and structure of geographic variables within the spatial neighborhoods surrounding these units. To this end, we further extend spatial similarity to incorporate the similarity of the neighborhoods of spatial units and use *S<sub>n</sub>* to denote. 
+It can consider not only the geographic configuration similarity between two spatial units but also the similarity in the composition and structure of geographic variables within the spatial neighborhoods surrounding these units. To this end, we further extend spatial similarity (*S<sub>l</sub>*) to incorporate the similarity of the neighborhoods of spatial units (*S<sub>n</sub>*), and use *S* to denote. 
 
 <img src="https://github.com/user-attachments/assets/dd0ff9c7-c07a-4057-9e4b-000296b6ae3d" width="900">
 
-
 ### GeoGATs for prediction
-As shown in the following figure, we first calculate the spatial similarity (*S<sub>n</sub>*) between a spatial observation and other observations, extracting the 10 most similar observations as neighboring nodes. Next, the spatial similarities are set as edge weights to help the model better understand spatial relationships. A masking operation ensures that each node only exchanges information and aggregates features with its neighboring nodes. In training process, dropout mask would randomly drop some parameters in GeoGAT-P to avoid overfitting. Finally, the model outputs the predicted values and generates a residual map.
+As shown in the following figure, we first calculate the spatial similarity (*S*) between a spatial observation and other observations, extracting the 10 most similar observations as neighboring nodes. Next, the spatial similarities are set as edge weights to help the model better understand spatial relationships. A masking operation ensures that each node only exchanges information and aggregates features with its neighboring nodes. In training process, dropout mask would randomly drop some parameters in GeoGAT-P to avoid overfitting. Finally, the model outputs the predicted values and generates a residual map.
 
 We compared the performance of Geographically Neural Network Weighted Regression (GNNWR), Spatial Regression Graph Convolutional Neural Network (SRGCNN), and GeoGAT-P models on the Elections dataset and the Homicides dataset. GeoGAT-P demonstrated the best predictive performance on both datasets. 
 
 To further understand GeoGAT-P, it is necessary to isolate the impact of spatial similarity on GAT mechanism. We developed a baseline based on the SRGCNN, referred to as SRGAT. In compared tests, the superior spatial prediction performance of GeoGAT-P is a main result of applying the spatial similarity principle rather than the influence of the GAT mechanism. 
 
-Compared to GeoGAT-P* that only considers the similarity between two observations, GeoGAT-P enhances model robustness and predictive performance by integrating both the spatial similarity between observations and the similarity between their neighborhoods (*S<sub>n</sub>*).
+Compared to GeoGAT-P* that only considers the similarity between two observations (*S<sub>l</sub>*), GeoGAT-P enhances model robustness and predictive performance by integrating both the spatial similarity between observations and the similarity between their neighborhoods (*S*).
 
 <img src="https://github.com/user-attachments/assets/4404892e-a746-451b-a695-2b7ab75111af" width="900">
 
