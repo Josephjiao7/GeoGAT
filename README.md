@@ -39,7 +39,7 @@ In the following figures, the empirical analysis case of the Elections dataset i
 This study employed the public datasets of U.S. Elections and Homicides for empirical case studies, both of which were downloaded from [GeoDa Lab](https://geodacenter.github.io/data-and-lab/).
 
 ### Reference:
-To cite this paper: Zhenzhi Jiao & Ran Tao (2025). Geographical Graph Attention Networks: Spatial Deep Learning Models for Spatial Prediction and Exploratory Spatial Data Analysis. Transactions in GIS. (Accepted)
+To cite this paper: Zhenzhi Jiao & Ran Tao (2025). Geographical Graph Attention Networks: Spatial Deep Learning Models for Spatial Prediction and Exploratory Spatial Data Analysis. Transactions in GIS. https://doi.org/10.1111/tgis.70029
 
 Zhu, A. X., Lu, G., Liu, J., Qin, C. Z., & Zhou, C. (2018). Spatial prediction based on Third Law of Geography. Annals of GIS, 24(4), 225-240.
 
